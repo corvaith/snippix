@@ -2,6 +2,7 @@
   "name": "snippix",
   "version": "1.0.0",
   "description": "Code snippet to image API (Carbon-style) Fastify, Shiki, Satori, no headless browser",
+  "type": "module",
   "main": "dist/server.js",
   "scripts": {
     "start": "node dist/server.js",

@@ -10,9 +10,6 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "declaration": false,
-    "types": [
-      "node"
-    ],
     "rewriteRelativeImportExtensions": true
   },
   "include": [

@@ -1,4 +1,4 @@
-# SNIPPIX Code Image API
+# Code Image API
 
 Render code snippets as beautiful images (Carbon-style) — no headless browser, tens of milliseconds.
 

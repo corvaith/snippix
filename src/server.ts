@@ -6,7 +6,7 @@ import { setRenderer, renderRoutes } from "./routes/render.js";
 import { startupSweep, startCleanupTimer, cleanupOnce, CLEANUP_INTERVAL_SECONDS } from "./core/cache.js";
 import { PORT, HOST, API_KEY } from "./config.js";
 
-async function main() {
+async function buildApp() {
   console.log("[startup] initializing highlighter…");
   const hl = await initHighlighter();
   const fonts = await loadFonts();
@@ -47,6 +47,11 @@ async function main() {
   setRenderer(hl, fonts);
   await app.register(renderRoutes);
 
+  return app;
+}
+
+async function main() {
+  const app = await buildApp();
   await app.listen({ port: PORT, host: HOST });
   console.log(`[ready] code-image-api listening on ${HOST}:${PORT}`);
 
@@ -58,7 +63,12 @@ async function main() {
   process.on("SIGINT", shutdown);
 }
 
-main().catch((err) => {
-  console.error("[fatal]", err);
-  process.exit(1);
-});
+const isDirect = process.argv[1] && process.argv[1].includes("server");
+if (isDirect) {
+  main().catch((err) => {
+    console.error("[fatal]", err);
+    process.exit(1);
+  });
+}
+
+export { buildApp };

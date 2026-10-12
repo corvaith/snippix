@@ -5,7 +5,7 @@ export interface Fonts {
   [family: string]: Buffer[];
 }
 
-const FONTS_DIR = path.join(process.cwd(), "assets", "fonts");
+const FONTS_DIR = path.join(new URL("../../assets/fonts/", import.meta.url).pathname);
 
 const FAMILY_DIRS: Record<string, string> = {
   "JetBrains Mono": "jetbrains-mono",

@@ -1,0 +1,48 @@
+{
+  "name": "snippix",
+  "version": "1.0.0",
+  "description": "Code snippet to image API (Carbon-style) Fastify, Shiki, Satori, no headless browser",
+  "main": "dist/server.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "dev": "tsx src/server.ts",
+    "build": "tsc -p tsconfig.json"
+  },
+  "keywords": [
+    "code-image",
+    "code-to-image",
+    "carbon",
+    "ray-so",
+    "syntax-highlighting",
+    "screenshot",
+    "snippet",
+    "api",
+    "fastify",
+    "shiki",
+    "satori",
+    "resvg",
+    "typescript",
+    "rest-api"
+  ],
+  "author": "corvaith",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@fastify/rate-limit": "^11.2.1",
+    "@resvg/resvg-js": "^2.6.2",
+    "fastify": "^5.12.5",
+    "lru-cache": "^11.5.3",
+    "prettier": "^3.9.10",
+    "satori": "^0.47.1",
+    "sharp": "^0.35.5",
+    "shiki": "^4.5.0",
+    "zod": "^4.6.6"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
